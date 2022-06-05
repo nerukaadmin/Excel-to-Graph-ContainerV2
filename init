@@ -2,6 +2,7 @@
 echo Pass argumrnt for script....
 echo For all "a"
 echo For team "t"
+echo For role "r"
 read input </dev/tty
 if [ "$input" = "a" ]; then
    docker run \
