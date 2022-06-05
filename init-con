@@ -4,7 +4,7 @@ echo For all "a"
 echo For team "t"
 echo For role "r"
 read input </dev/tty
-if [ "$input" = "a" ]; then
+if [ "$input" = "al" ]; then
    docker run \
    -v $(pwd)/IN:/excel/IN \
    -v $(pwd)/OUT:/excel/OUT \
@@ -12,7 +12,7 @@ if [ "$input" = "a" ]; then
    -v $(pwd)/TM:/excel/TM \
    nerukaneo/ex_to_graph:v3 al
    
-elif [ "$input" = "t" ];then
+elif [ "$input" = "tm" ];then
    docker run \
    -v $(pwd)/IN:/excel/IN \
    -v $(pwd)/OUT:/excel/OUT \
