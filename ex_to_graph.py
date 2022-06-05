@@ -81,9 +81,8 @@ else:
 			os.remove(tmp+date+"_interm.csv")
 			os.remove(tmp+date+"_total_interm.csv")
 			os.chmod(out_dir, 0o777)
-				
+
 		elif arg == "t":
-			print (arg)
 			print(files_xlsx)
 			xl_path=path+"/"+files_xlsx[0]
 			read_file=pd.read_excel(xl_path,engine="openpyxl", sheet_name="Data")
