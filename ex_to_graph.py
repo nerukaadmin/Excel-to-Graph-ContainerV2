@@ -190,11 +190,11 @@ else:
 			p5_fdp=fpd[fpd['Priority'] == '5 - Planning']
 			df_list=[p1_fdp,p2_fdp,p3_fdp,p4_fdp,p5_fdp]
 			role_file=os.listdir(role)
-			role_xlsx = [i for i in files if i.endswith('.xlsx')]
+			role_xlsx = [i for i in role_file if i.endswith('.xlsx')]
 			if len(role_xlsx) > 1 or len(role_xlsx) == 0:
 				print("Oops ROLE Dir empty or more than 1 role xlsx is found.. ")
 			else:	
-				role_file=pd.read_excel(role+"/role.xlsx",engine="openpyxl", sheet_name="Role")
+				role_file=pd.read_excel(role+role_xlsx[0],engine="openpyxl", sheet_name="Role")
 				role_file.to_csv (tmp+date+"_role_temp_.csv",index = None,header=True)#del
 				dfl=pd.read_csv(tmp+date+"_role_temp_.csv")
 				role_uni=dfl['Designation'].unique()
