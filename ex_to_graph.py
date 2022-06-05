@@ -42,7 +42,7 @@ else:
 			inc_count.to_csv(tmp+date+"_interm.csv", sep=',', encoding='utf-8',header=False)
 			col_name_change=['Engineer_Name','Priority','Count']
 			tfpd=pd.read_csv(tmp+date+'_interm.csv',sep=',', encoding='utf-8',names=col_name_change)
-			
+
 			fpd=tfpd.sort_values('Engineer_Name')
 			p1_fdp=fpd[fpd['Priority'] == '1 - Critical']
 			p2_fdp=fpd[fpd['Priority'] == '2 - High']

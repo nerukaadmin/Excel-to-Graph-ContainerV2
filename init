@@ -18,8 +18,6 @@ elif [ "$input" = "t" ];then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   -v $(pwd)/ROLE:/excel/ROLE \
-   -v $(pwd)/ROLE_TXT:/excel/ROLE_TXT \
    ex_to_graph:v3 -e t
    
 else
@@ -28,6 +26,8 @@ else
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
+   -v $(pwd)/ROLE:/excel/ROLE \
+   -v $(pwd)/ROLE_TXT:/excel/ROLE_TXT \
    ex_to_graph:v3 -e r
 
 fi
