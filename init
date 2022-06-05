@@ -10,7 +10,7 @@ if [ "$input" = "a" ]; then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   ex_to_graph:v3
+   ex_to_graph:v3 -e a
    
 elif [ "$input" = "t" ];then
    docker run \

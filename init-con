@@ -10,14 +10,15 @@ if [ "$input" = "a" ]; then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   nerukaneo/ex_to_graph:v3
+   nerukaneo/ex_to_graph:v3 -e a
+   
 elif [ "$input" = "t" ];then
    docker run \
    -v $(pwd)/IN:/excel/IN \
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   nerukaneo/ex_to_graph:v3 -e t
+   nerukaneo/ex_to_graph:v3
 else
     docker run \
    -v $(pwd)/IN:/excel/IN \
