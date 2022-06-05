@@ -1,8 +1,8 @@
 #!/bin/sh
 echo Pass argumrnt for script....
-echo For all "a"
-echo For team "t"
-echo For role "r"
+echo For all "al"
+echo For team "tm"
+echo For role "ro"
 read input </dev/tty
 if [ "$input" = "a" ]; then
    docker run \
@@ -10,7 +10,7 @@ if [ "$input" = "a" ]; then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   ex_to_graph:v3 -e a
+   ex_to_graph:v3 al
    
 elif [ "$input" = "t" ];then
    docker run \
@@ -18,7 +18,7 @@ elif [ "$input" = "t" ];then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   ex_to_graph:v3
+   ex_to_graph:v3 tm
    
 else
     docker run \
@@ -28,7 +28,7 @@ else
    -v $(pwd)/TM:/excel/TM \
    -v $(pwd)/ROLE:/excel/ROLE \
    -v $(pwd)/ROLE_TXT:/excel/ROLE_TXT \
-   ex_to_graph:v3 -e r
+   ex_to_graph:v3 ro
 
 fi
 sudo chmod -R 777 OUT/

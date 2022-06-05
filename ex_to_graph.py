@@ -29,7 +29,9 @@ if len(files_xlsx) == 0 or len(files_xlsx) > 1:
 else:
 	try:
 		arg=sys.argv[1]
-		if arg == "a":
+		argl=[arg]
+		if argl[0] == "al":
+			print(argl[0])
 			print(files_xlsx)
 			xl_path=path+"/"+files_xlsx[0]
 			read_file=pd.read_excel(xl_path,engine="openpyxl", sheet_name="Data")
@@ -82,7 +84,8 @@ else:
 			os.remove(tmp+date+"_total_interm.csv")
 			os.chmod(out_dir, 0o777)
 
-		elif arg == "t":
+		elif argl[0] == "tm":
+			print(argl[0])
 			print(files_xlsx)
 			xl_path=path+"/"+files_xlsx[0]
 			read_file=pd.read_excel(xl_path,engine="openpyxl", sheet_name="Data")
@@ -166,7 +169,8 @@ else:
 				os.remove(tmp+date+"_interm.csv")
 				os.remove(tmp+date+"_total_interm.csv")
 				os.chmod(out_dir, 0o777)
-		else:
+		elif argl[0] == "ro":
+			print(argl[0])
 			print(files_xlsx)
 			xl_path=path+"/"+files_xlsx[0]
 			read_file=pd.read_excel(xl_path,engine="openpyxl", sheet_name="Data")
@@ -323,7 +327,9 @@ else:
 				os.remove(tmp+date+"_role_temp_.csv")
 				os.chmod(out_path+date, 0o777)		
 				print("Enginner_role VS Priority  anaysis reoprt created at %s", str(inctp_out_dir))
+		else:
+			print("Arg out of bound,Please pass args as for all report -al , for team report -tm, for RB analysis -ro")		
 	except Exception as e:
-		print(e)
-		traceback.print_exc()
-		print("Please pass args as for all report -a , for team report -t")		
+		#print(e)
+		#traceback.print_exc()
+		print("Please pass args as for all report -al , for team report -tm, for RB analysis -ro")		
