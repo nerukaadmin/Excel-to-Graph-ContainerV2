@@ -18,7 +18,7 @@ elif [ "$input" = "t" ];then
    -v $(pwd)/OUT:/excel/OUT \
    -v $(pwd)/tmp:/excel/tmp \
    -v $(pwd)/TM:/excel/TM \
-   ex_to_graph:v3 -e t
+   ex_to_graph:v3
    
 else
     docker run \

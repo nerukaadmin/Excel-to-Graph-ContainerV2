@@ -80,8 +80,10 @@ else:
 			print("All anaysis reoprt created at %s",out_dir)
 			os.remove(tmp+date+"_interm.csv")
 			os.remove(tmp+date+"_total_interm.csv")
-			os.chmod(out_dir, 0o777)	
+			os.chmod(out_dir, 0o777)
+				
 		elif arg == "t":
+			print (arg)
 			print(files_xlsx)
 			xl_path=path+"/"+files_xlsx[0]
 			read_file=pd.read_excel(xl_path,engine="openpyxl", sheet_name="Data")
@@ -191,8 +193,11 @@ else:
 			df_list=[p1_fdp,p2_fdp,p3_fdp,p4_fdp,p5_fdp]
 			role_file=os.listdir(role)
 			role_xlsx = [i for i in role_file if i.endswith('.xlsx')]
+
 			if len(role_xlsx) > 1 or len(role_xlsx) == 0:
+
 				print("Oops ROLE Dir empty or more than 1 role xlsx is found.. ")
+
 			else:	
 				role_file=pd.read_excel(role+role_xlsx[0],engine="openpyxl", sheet_name="Role")
 				role_file.to_csv (tmp+date+"_role_temp_.csv",index = None,header=True)#del
