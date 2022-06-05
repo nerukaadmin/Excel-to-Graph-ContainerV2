@@ -1,8 +1,8 @@
 #!/bin/sh
 echo Pass argumrnt for script....
-echo For all "a"
-echo For team "t"
-echo For role "r"
+echo For all "al"
+echo For team "tm"
+echo For role "ro"
 read input </dev/tty
 if [ "$input" = "al" ]; then
    docker run \
